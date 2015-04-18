@@ -20,6 +20,8 @@ function initialize() {
 function getAnnualWatts(latitude, longitude){
   var url = "https://developer.nrel.gov/api/pvwatts/v5.json?api_key=xwLd5WSQRkNkNnecjrj3sCjiWtBn0dromb64lMvV&lat=" + latitude + "&lon=" + longitude + "&system_capacity=1&module_type=0&losses=95&array_type=1&tilt=15&azimuth=180"
 
+  // need to make tilt and azimuth calculations
+
   $.ajax({
     url: url,
     type: "GET",
