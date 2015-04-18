@@ -38,6 +38,10 @@ function getPrice(){
   var tilt = $('input:radio[name=tilt]:checked').val()
   var azimuth = $('input:radio[name=orientation]:checked').val()
 
+  console.log(tilt)
+  console.log(azimuth)
+  console.log(lat)
+  console.log(long)
   var url = "https://developer.nrel.gov/api/pvwatts/v5.json?api_key=xwLd5WSQRkNkNnecjrj3sCjiWtBn0dromb64lMvV&lat=" + lat + "&lon=" + long + "&system_capacity=1&module_type=0&losses=5&array_type=1&tilt=" + tilt + "&azimuth=" + azimuth
 
   $.ajax({
