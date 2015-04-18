@@ -15,6 +15,9 @@
   <script src="form.js"></script>
   <style>
 
+  /*#to-be-hidden{
+    visibility: hidden;
+  }*/
     body {
       font-family: 'Lato', sans-serif;
     }
@@ -158,39 +161,43 @@
         <hr>
 
       </div>
-      <div class="row" id="result">
-        <div class="col-sm-offset-2 col-sm-10">
-          <h3><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> We've calculated how valuable your roof is for solar companies- </h3>
+
+      <div id="to-be-hidden">
+        <div class="row" id="result">
+          <div class="col-sm-offset-2 col-sm-10">
+            <h3><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> We've calculated how valuable your roof is for solar companies- </h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-offset-1 col-sm-5 result">
+            <p class="price">Price you should set-</p>
+            <p class="kwh"><span id="cent"> 15 </span>&cent;&#47;kwh</p>
+          </div>
+
+          <div class="col-sm-offset-1 col-sm-5">
+              <a id="link01-href" href="http://www.sunrun.com" target="_blank">
+                <div class="suggestion" id="link01">
+              <img id="link01-img" src="" width="75" height="75"/> </div>
+              </a>
+          </div>
+
+          <div class="col-sm-offset-1 col-sm-5">
+              <a id="link02-href" href="http://www.solarcity.com" target="_blank">
+                <div class="suggestion" id="link01">
+              <img id="link02-img" src="icons/vendor1.png" width="75" height="75"/></div>
+              </a>
+          </div>
+
+          <div class="col-sm-offset-1 col-sm-5">
+              <a id="link03-href" href="http://www.sunrun.com" target="_blank">
+                <div class="suggestion" id="link01">
+              <img id="link03-img" src="" width="75" height="75"/> </div>
+              </a>
+          </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-sm-offset-1 col-sm-5 result">
-          <p class="price">Price you should set-</p>
-          <p class="kwh"><span id="cent"> 15 </span>&cent;&#47;kwh</p>
-        </div>
-
-        <div class="col-sm-offset-1 col-sm-5">
-            <a id="link01-href" href="http://www.sunrun.com" target="_blank">
-              <div class="suggestion" id="link01">
-            <img id="link01-img" src="" width="75" height="75"/> </div>
-            </a>
-        </div>
-
-        <div class="col-sm-offset-1 col-sm-5">
-            <a id="link02-href" href="http://www.solarcity.com" target="_blank">
-              <div class="suggestion" id="link01">
-            <img id="link02-img" src="icons/vendor1.png" width="75" height="75"/></div>
-            </a>
-        </div>
-
-        <div class="col-sm-offset-1 col-sm-5">
-            <a id="link03-href" href="http://www.sunrun.com" target="_blank">
-              <div class="suggestion" id="link01">
-            <img id="link03-img" src="" width="75" height="75"/> </div>
-            </a>
-        </div>
-      </div>
 
     </div> <!-- end of row -->
 

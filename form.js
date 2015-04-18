@@ -11,6 +11,7 @@ $(document).ready(function() {
 var acAnnual;
 var lat;
 var long;
+var myPrice;
 
 function initialize() {
   var options = {
@@ -61,7 +62,7 @@ function calculatePrice (){
 
   var myInsulation = acAnnual * tree
 
-  var myPrice = 0.4 - myInsulation*(0.00014)
+  myPrice = 0.4 - myInsulation*(0.00014)
 
   if (myPrice < 0.11){
     myPrice = 0.11;
@@ -76,6 +77,28 @@ function calculatePrice (){
 
   $('#cent').html(roundedPrice)
   getCompanies(roundedPrice);
+  calculateSavings();
+}
+
+function showResults(){
+  $("#to-be-hidden").css("visibility", "hidden")
+}
+
+
+function calculateSavings(){
+  var customerBill = parseInt($("#bill option:selected").val());
+
+  var utilityPrice = 0.23;
+
+  var savings = (customerBill/utilityPrice)*12*20*(utilityPrice - myPrice)
+
+  $('#savings').html(savings);
+
+  showResults();
+}
+
+function showResults(){
+  $("#to-be-hidden").css("visibility", "hidden")
 }
 
 function getCompanies(price){
