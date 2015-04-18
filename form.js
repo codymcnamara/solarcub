@@ -1,4 +1,16 @@
+// disable 'enter' button
+$(document).ready(function() {
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+
 var acAnnual;
+var lat;
+var long;
 
 function initialize() {
   var options = {
@@ -11,59 +23,59 @@ function initialize() {
 
   google.maps.event.addListener(autocomplete, 'place_changed', function () {
       var place = autocomplete.getPlace();
-      var lat = place.geometry.location.lat()
-      var long = place.geometry.location.lng()
-      getAnnualWatts(lat, long);
+      lat = place.geometry.location.lat()
+      long = place.geometry.location.lng()
   });
 
-  $(document).on("click", '#submit', function(){
+  $("#estimate").on("click", function(){
     event.preventDefault();
-    findPrice();
-  }
-}
+    getPrice();
+  });
+};
 
 
-function getAnnualWatts(latitude, longitude){
+function getPrice(){
   var tilt = $('input:radio[name=tilt]:checked').val()
   var azimuth = $('input:radio[name=orientation]:checked').val()
 
-  var url = "https://developer.nrel.gov/api/pvwatts/v5.json?api_key=xwLd5WSQRkNkNnecjrj3sCjiWtBn0dromb64lMvV&lat=" + latitude + "&lon=" + longitude + "&system_capacity=1&module_type=0&losses=95&array_type=1&tilt=" + tilt + "&azimuth=" + azimuth
+  var url = "https://developer.nrel.gov/api/pvwatts/v5.json?api_key=xwLd5WSQRkNkNnecjrj3sCjiWtBn0dromb64lMvV&lat=" + lat + "&lon=" + long + "&system_capacity=1&module_type=0&losses=5&array_type=1&tilt=" + tilt + "&azimuth=" + azimuth
 
   $.ajax({
     url: url,
     type: "GET",
     success: function (response) {
       acAnnual = response.outputs.ac_annual
+      console.log("ac_annual: " + acAnnual);
+      calculatePrice();
     }
   });
 }
 
-function findPrice{
-  var tree = parseInt($('input:radio[name=tree]:checked').val())
+function calculatePrice (){
+  var tree = parseInt($('input:radio[name=tree]:checked')[0].value)
   // var bill = $("#bill option:selected").val()
 
   var myInsulation = acAnnual * tree
 
-  var myPrice = 0.34 - myInsulation*(0.00016)
+  var myPrice = 0.4 - myInsulation*(0.00014)
+  //
+  // if (myPrice < 0.11){
+  //   myPrice = 0.11;
+  // }
+  // if (myPrice > 0.22){
+  //   myPrice = 0.22;
+  // }
 
-  if (myPrice < 0.11){
-    myPrice = 0.11;
-  }
-  if (myPrice > 0.22){
-    myPrice = 0.22;
-  }
-
-  alert(myPrice)
+  console.log("price: " + myPrice)
 }
 
-findCompanies(price){
-  if (price >= 0.17){
-
-  } else if (price >= 0.15){
-
-  } else {
-
-  }
-}
+// function getCompanies(price >= 0.17){
+//
+//   } else if (price >= 0.15){
+//
+//   } else {
+//
+//   }
+// };
 
 google.maps.event.addDomListener(window, 'load', initialize);
