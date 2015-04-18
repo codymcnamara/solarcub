@@ -58,24 +58,53 @@ function calculatePrice (){
   var myInsulation = acAnnual * tree
 
   var myPrice = 0.4 - myInsulation*(0.00014)
-  //
-  // if (myPrice < 0.11){
-  //   myPrice = 0.11;
-  // }
-  // if (myPrice > 0.22){
-  //   myPrice = 0.22;
-  // }
+
+  if (myPrice < 0.11){
+    myPrice = 0.11;
+  }
+  if (myPrice > 0.22){
+    myPrice = 0.22;
+  }
 
   console.log("price: " + myPrice)
+
+  var roundedPrice = Math.round(myPrice*100)
+
+  $('#cent').html(roundedPrice)
+  getCompanies(roundedPrice);
 }
 
-// function getCompanies(price >= 0.17){
-//
-//   } else if (price >= 0.15){
-//
-//   } else {
-//
-//   }
-// };
+function getCompanies(price){
+
+  if (price >= 17){
+    // $("#link01").html("SolarCity")
+    $("#link01-href").attr("href", "http://www.solarcity.com/")
+    $("#link01-img").attr("src", "imgs/solarcity.png")
+
+    $("#link02-href").attr("href", "http://www.vivintsolar.com/")
+    $("#link02-img").attr("src", "imgs/vivint.png")
+
+    $("#link03-href").attr("href", "https://www.nrghomesolar.com/contact-us/get-a-quote/")
+    $("#link03-img").attr("src", "imgs/NRG.png")
+  } else if (price >= 15){
+    $("#link01-href").attr("href", "http://us.sunpower.com/home-solar/")
+    $("#link01-img").attr("src", "imgs/sunpower.png")
+
+    $("#link02-href").attr("href", "http://www.petersendean.com/get-started/")
+    $("#link02-img").attr("src", "imgs/PedersenDean.png")
+
+    $("#link03-href").attr("href", "http://www.verengosolar.com/")
+    $("#link03-img").attr("src", "imgs/verengo.png")
+  } else {
+    $("#link01-href").attr("href", "http://www.sungevity.com/")
+    $("#link01-img").attr("src", "imgs/Sungevity.png")
+
+    $("#link02-href").attr("href", "http://www.sunrun.com/free-solar-quote")
+    $("#link02-img").attr("src", "imgs/Sunrun_logo.png")
+
+    $("#link03-href").attr("href", "https://solaruniverse.com/solar-savings-estimate")
+    $("#link03-img").attr("src", "imgs/Solar_Universe_Logo.png")
+  }
+};
 
 google.maps.event.addDomListener(window, 'load', initialize);

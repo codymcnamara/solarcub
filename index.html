@@ -15,19 +15,27 @@
   <script src="form.js"></script>
 
   <style>
-    .jumbotron{
-     background: url('power-poles.jpg') no-repeat center center !important;
-    }
-    .jumbotron h1 { color: #333; }
-    .links {
-      border: 1px solid #eee;
-      border-radius: 10px;
-      padding: 10px; font-size: 150%;
-      text-align: center; height: 200px;
-      background-color: #FA9A50;
-    }
+  .jumbotron{
+   background: url('power-poles.jpg') no-repeat center center !important;
+  }
+  .jumbotron h1 { color: #333; }
+  .result, .suggestion {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 50px 20px;
+    font-size: 125%;
+    text-align: center;
+    background-color: #ffaa00;
+    color: #333;
+  }
 
-    #link01 {
+  .suggestion { padding: 10px 30px; font-size: 150%; text-align: left; }
+
+  .price { font-size: 1.5em; }
+
+  .kwh { font-size: 4em; }
+
+    /*#link01 {
       background: url('icons/calculator.png') no-repeat;
       background-position:20px 20px;
     }
@@ -40,9 +48,7 @@
     #link03 {
       background: url('icons/rebate.png') no-repeat;
       background-position:20px 20px;
-    }
-
-    #moneySaved { visibility: visible; }
+    }*/
   </style>
 </head>
 <body>
@@ -140,41 +146,43 @@
         <hr>
 
       </div>
-      <div class="row" id="result">
-        <div class="col-sm-offset-2 col-sm-4">
-          <h3><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> We've calculated how valuable your roof is for solar companies- </h3>
-          <p>In <strong><span id="billMonth"> Feburary </span></strong> you spent $<span id="electricBill"></span>.</p>
-          <p>Using solar, you could have saved <strong>$<span id="moneySaved"> </span></strong></p>
-          <p>To find out more click the follow - </p>
-        </div>
+    <div class="row" id="result">
+      <div class="col-sm-offset-2 col-sm-10">
+        <h3><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> We've calculated how valuable your roof is for solar companies- </h3>
+    <!--    <p>In <strong><span id="billMonth"> Feburary </span></strong> you spent $<span id="electricBill"></span>.</p>
+        <p>Using solar, you could have saved <strong>$<span id="moneySaved"> </span></strong></p>
+        <p>To find out more click the follow - </p> -->
       </div>
-
-      <div class="row" id="link">
-        <div class="col-sm-4" id="link01">
-          <a href="http://energychallenge.energy.gov/a/dtd/Residential-Solar-Calculator/12930-26122" target="_blank"><div class="links">Estimate your return on investment for installing residential solar panels</div></a>
-        </div>
-
-        <div class="col-sm-4" id="link02">
-          <a href="http://www.gosolarcalifornia.ca.gov/csi/rebates.php" target="_blank"><div class="links">Find the currently applicable rebate level in your area<img src="icons/rebate.png" width="100" height="100"></div></a>
-        </div>
-
-        <div class="col-sm-4" id="link03">
-          <a href="https://www.energystar.gov/" target="_blank"><div class="links">Assess the energy efficiency of your home and see how it measures up<img src="icons/energystar.png" width="100" height="100"></div></a>
-        </div>
-      </div>
-      </div>
-
-
-  <!--     <div class="col-sm-5">
-        <h3><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Chart comparison - </h3>
-
-      </div>
-     <div class="col-sm-4">
-        <h3><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Find out more - </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      </div> -->
     </div>
+
+    <div class="row">
+      <div class="col-sm-offset-1 col-sm-5 result">
+        <p class="price">Price you should set-</p>
+        <p class="kwh"><span id="cent"> 15 </span>&cent;&#47;kwh</p>
+      </div>
+
+      <div class="col-sm-offset-1 col-sm-5">
+          <a id="link01-href" href="http://www.sunrun.com" target="_blank">
+            <div class="suggestion" id="link01">
+          <img id="link01-img" src="" width="75" height="75"/> </div>
+          </a>
+      </div>
+
+      <div class="col-sm-offset-1 col-sm-5">
+          <a id="link02-href" href="http://www.solarcity.com" target="_blank">
+            <div class="suggestion" id="link01">
+          <img id="link02-img" src="icons/vendor1.png" width="75" height="75"/></div>
+          </a>
+      </div>
+
+      <div class="col-sm-offset-1 col-sm-5">
+          <a id="link03-href" href="http://www.sunrun.com" target="_blank">
+            <div class="suggestion" id="link01">
+          <img id="link03-img" src="" width="75" height="75"/> </div>
+          </a>
+      </div>
+    </div>
+
   </div>
 </div>
 </body>
