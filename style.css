@@ -40,6 +40,7 @@ body {
 
 .container-fluid { background-color: #f6f6f6; }
 
+
 .result, .suggestion {
   border: 5px solid #333;
   border-radius: 10px;
@@ -50,6 +51,7 @@ body {
   background-color: white;
   color: #333;
 }
+
 
 .suggestion {
   padding: 10px 30px;
@@ -78,3 +80,9 @@ body {
 .footer { padding-top: 60px; paddding-bottom: 60px; }
 
 .text-muted { text-align: center; }
+
+
+/*results */
+.company-img{
+  max-width: 100%;
+}
