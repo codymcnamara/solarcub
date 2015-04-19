@@ -81,7 +81,7 @@ function calculatePrice (){
 }
 
 function showResults(){
-  $("#to-be-hidden").css("visibility", "hidden")
+  $("#to-be-hidden").css("visibility", "visible")
 }
 
 
@@ -92,13 +92,10 @@ function calculateSavings(){
 
   var savings = (customerBill/utilityPrice)*12*20*(utilityPrice - myPrice)
 
-  $('#savings').html(savings);
+  $('#save').html(Math.round(savings));
 
+  console.log(savings)
   showResults();
-}
-
-function showResults(){
-  $("#to-be-hidden").css("visibility", "hidden")
 }
 
 function getCompanies(price){

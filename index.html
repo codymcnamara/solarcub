@@ -15,9 +15,36 @@
   <script src="form.js"></script>
   <style>
 
-  /*#to-be-hidden{
-    visibility: hidden;
-  }*/
+    #the-logo-itself{
+      width: 75px;
+      height: 112px;
+      margin: 0 auto;
+      position: relative;
+      left: 50%;
+      top: 20%;
+      /*margin: 0 auto;*/
+      margin-left: -120px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    legend{
+      text-align: right;
+    }
+    .result-description{
+      text-align: center;
+    }
+
+    .logo{
+      max-width: 225px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #to-be-hidden{
+      visibility: hidden;
+    }
+
     body {
       font-family: 'Lato', sans-serif;
     }
@@ -42,12 +69,15 @@
 
     .suggestion { padding: 10px 30px; font-size: 150%; text-align: left; }
 
+    .control-label { font-size: 150%; }
+
     .checkboxgroup {
       display: inline-block;
       text-align: center;
     }
     .checkboxgroup label {
       display: block;
+      margin-right: 50px;
     }
 
     .price { font-size: 1.5em; }
@@ -67,19 +97,23 @@
 
   <div class="container">
 
-    <fieldset>
-      <legend>Estimate savings with solar panels at the city- </legend>
-    </fieldset>
+    <div class="row">
+      <div id="brand-cover">
+        <img id="the-logo-itself" src="Images/solarcub-logo.png" alt="SolarCub" />
+      </div>
+    </div>
+
+    <!-- <fieldset>
+      <legend>Estimate Solar Panel savings</legend>
+    </fieldset> -->
 
     <div class="row">
       <div class="col-md-12">
         <form class="form-horizontal">
 
           <div class="form-group">
-            <label for="city" class="col-sm-4 control-label">Enter your city</label>
-
-            <div class="col-sm-8">
-              <input type="text" class="form-control" id="city" placeholder="City">
+            <div class="col-sm-offset-2 col-sm-8">
+              <input type="text" class="form-control" id="city" placeholder="What's Your City?">
             </div>
           </div>
 
@@ -87,27 +121,28 @@
             <label id="orientation" for="orientation" class="col-sm-4 control-label">What way does your roof face?</label>
             <div class="col-sm-8">
               <div class="checkboxgroup">
-              <label for="orientation"><img src="images/roofOrientation/south.png" alt="South" />South</label>
-              <input type="radio" name="orientation" value="180" />
-            </div>
-            <div class="checkboxgroup">
-              <label for="orientation"><img src="images/roofOrientation/south.png" alt="South" />SouthWest</label>
-              <input type="radio" name="orientation" value="225" />
-            </div>
-            <div class="checkboxgroup">
-              <label for="orientation"><img src="images/roofOrientation/south.png" alt="South" />East</label>
-              <input type="radio" name="orientation" value="90" />
-            </div>
-            <div class="checkboxgroup">
-              <label for="orientation"><img src="images/roofOrientation/south.png" alt="South" />SouthEast</label>
-              <input type="radio" name="orientation" value="135" />
-            </div>
+                <label for="orientation"><img src="images/roofOrientation/south.png" alt="South" /><br>South</label>
+                <input type="radio" name="orientation" value="180" />
+              </div>
+              <div class="checkboxgroup">
+                <label for="orientation"><img src="images/roofOrientation/west.png" alt="West" /><br>SouthWest</label>
+                <input type="radio" name="orientation" value="225" />
+              </div>
+              <div class="checkboxgroup">
+                <label for="orientation"><img src="images/roofOrientation/southwest.png" alt="South" /><br>SouthWest</label>
+                <input type="radio" name="orientation" value="90" />
+              </div>
+              <div class="checkboxgroup">
+                <label for="orientation"><img src="images/roofOrientation/southeast.png" alt="SouthEast" /><br>SouthEast</label>
+                <input type="radio" name="orientation" value="135" />
+              </div>
             </div>
           </div>
 
           <div class="form-group">
             <label id="tilt" for="tilt" class="col-sm-4 control-label">What does your roof looks like?</label>
             <div class="col-sm-8">
+
               <label class="radio-inline">
                 <input type="radio" name="tilt" value="0"> <img src="images/roofIncline/flat-roof.png" alt="Flat roof" />
                 </label>
@@ -163,41 +198,56 @@
       </div>
 
       <div id="to-be-hidden">
-        <div class="row" id="result">
-          <div class="col-sm-offset-2 col-sm-10">
-            <h3><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> We've calculated how valuable your roof is for solar companies- </h3>
+
+        <div class="row">
+          <div class="col-sm-4 result-description">
+            <h3>SolarCub calculates that solar could save you:</h3>
+          </div>
+          <div class="col-sm-4 result-description">
+            <h3>We found the 3 providers that give customers with roofs like yours the best deal:</h3>
+          </div>
+          <div class="col-sm-4 result-description">
+            <h3>SolarCub’s proprietary database shows you can ask for a rate as low as:</h3>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-sm-offset-1 col-sm-5 result">
-            <p class="price">Price you should set-</p>
+          <div class="col-sm-4 result">
+            <p class="kwh"><span class="glyphicon glyphicon-usd" aria-hidden="true" id="save"></span></p>
+            <p class="price">In savings</p>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="col-sm-12">
+                <a id="link01-href" href="http://www.sunrun.com" target="_blank">
+                  <div class="suggestion" id="link01">
+                <img id="link01-img" class="logo" src="" height="75"/> </div>
+                </a>
+            </div>
+
+            <div class="col-sm-12">
+                <a id="link02-href" href="http://www.solarcity.com" target="_blank">
+                  <div class="suggestion" id="link01">
+                <img id="link02-img" class="logo" src="icons/vendor1.png" height="75"/></div>
+                </a>
+            </div>
+
+            <div class="col-sm-12">
+                <a id="link03-href" href="http://www.sunrun.com" target="_blank">
+                  <div class="suggestion" id="link01">
+                <img id="link03-img" class="logo" src="" height="75"/> </div>
+                </a>
+            </div>
+          </div>
+
+
+          <div class="col-sm-4 result">
+            <p class="price">Price you should get</p>
             <p class="kwh"><span id="cent"> 15 </span>&cent;&#47;kwh</p>
           </div>
 
-          <div class="col-sm-offset-1 col-sm-5">
-              <a id="link01-href" href="http://www.sunrun.com" target="_blank">
-                <div class="suggestion" id="link01">
-              <img id="link01-img" src="" width="75" height="75"/> </div>
-              </a>
-          </div>
-
-          <div class="col-sm-offset-1 col-sm-5">
-              <a id="link02-href" href="http://www.solarcity.com" target="_blank">
-                <div class="suggestion" id="link01">
-              <img id="link02-img" src="icons/vendor1.png" width="75" height="75"/></div>
-              </a>
-          </div>
-
-          <div class="col-sm-offset-1 col-sm-5">
-              <a id="link03-href" href="http://www.sunrun.com" target="_blank">
-                <div class="suggestion" id="link01">
-              <img id="link03-img" src="" width="75" height="75"/> </div>
-              </a>
-          </div>
         </div>
       </div>
-
 
     </div> <!-- end of row -->
 
