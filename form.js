@@ -79,32 +79,17 @@ function calculateSavings(){
 function getCompanies(price){
 
   if (price >= 17){
-    $("#link01-href").attr("href", "http://www.solarcity.com/")
-    $("#link01-img").attr("src", "imgs/solarcity.png")
-
-    $("#link02-href").attr("href", "http://www.vivintsolar.com/")
-    $("#link02-img").attr("src", "imgs/vivint.png")
-
-    $("#link03-href").attr("href", "https://www.nrghomesolar.com/contact-us/get-a-quote/")
-    $("#link03-img").attr("src", "imgs/NRG.png")
+    var companies = vendors.high
   } else if (price >= 15){
-    $("#link01-href").attr("href", "http://us.sunpower.com/home-solar/")
-    $("#link01-img").attr("src", "imgs/sunpower.png")
-
-    $("#link02-href").attr("href", "http://www.petersendean.com/get-started/")
-    $("#link02-img").attr("src", "imgs/PedersenDean.png")
-
-    $("#link03-href").attr("href", "http://www.verengosolar.com/")
-    $("#link03-img").attr("src", "imgs/verengo.png")
+    var companies = vendors.medium
   } else {
-    $("#link01-href").attr("href", "http://www.sungevity.com/")
-    $("#link01-img").attr("src", "imgs/Sungevity.png")
+    var companies = vendors.low
+  }
 
-    $("#link02-href").attr("href", "http://www.sunrun.com/free-solar-quote")
-    $("#link02-img").attr("src", "imgs/Sunrun_logo.png")
-
-    $("#link03-href").attr("href", "https://solaruniverse.com/solar-savings-estimate")
-    $("#link03-img").attr("src", "imgs/Solar_Universe_Logo.png")
+  var i = 0;
+  for(i; i < 3; i++){
+    $($(".company-link").get(i)).attr("href", companies[i].link);
+    $($(".company-img").get(i)).attr("src", companies[i].logo);
   }
 };
 
