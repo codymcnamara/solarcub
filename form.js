@@ -1,17 +1,4 @@
-// disable 'enter' button
-$(document).ready(function() {
-  $(window).keydown(function(event){
-    if(event.keyCode == 13) {
-      event.preventDefault();
-      return false;
-    }
-  });
-});
-
-var acAnnual;
-var lat;
-var long;
-var myPrice;
+var customerInfo = {};
 
 function initialize() {
   var options = {
@@ -24,8 +11,8 @@ function initialize() {
 
   google.maps.event.addListener(autocomplete, 'place_changed', function () {
       var place = autocomplete.getPlace();
-      lat = place.geometry.location.lat()
-      long = place.geometry.location.lng()
+      customerInfo.lat = place.geometry.location.lat()
+      customerInfo.long = place.geometry.location.lng()
   });
 
   $("#estimate").on("click", function(){
@@ -41,16 +28,16 @@ function getPrice(){
 
   console.log(tilt)
   console.log(azimuth)
-  console.log(lat)
-  console.log(long)
-  var url = "https://developer.nrel.gov/api/pvwatts/v5.json?api_key=xwLd5WSQRkNkNnecjrj3sCjiWtBn0dromb64lMvV&lat=" + lat + "&lon=" + long + "&system_capacity=1&module_type=0&losses=5&array_type=1&tilt=" + tilt + "&azimuth=" + azimuth
+  console.log(customerInfo.lat)
+  console.log(customerInfo.long)
+  var url = "https://developer.nrel.gov/api/pvwatts/v5.json?api_key=xwLd5WSQRkNkNnecjrj3sCjiWtBn0dromb64lMvV&lat=" + customerInfo.lat + "&lon=" + customerInfo.long + "&system_capacity=1&module_type=0&losses=5&array_type=1&tilt=" + tilt + "&azimuth=" + azimuth
 
   $.ajax({
     url: url,
     type: "GET",
     success: function (response) {
-      acAnnual = response.outputs.ac_annual
-      console.log("ac_annual: " + acAnnual);
+      customerInfo.acAnnual = response.outputs.ac_annual
+      console.log("ac_annual: " + customerInfo.acAnnual);
       calculatePrice();
     }
   });
@@ -58,22 +45,21 @@ function getPrice(){
 
 function calculatePrice (){
   var tree = parseInt($('input:radio[name=tree]:checked')[0].value)
-  // var bill = $("#bill option:selected").val()
 
-  var myInsulation = acAnnual * tree
+  var myInsulation = customerInfo.acAnnual * tree
 
-  myPrice = 0.4 - myInsulation*(0.00014)
+  customerInfo.solarPrice = 0.4 - myInsulation*(0.00014)
 
-  if (myPrice < 0.11){
-    myPrice = 0.11;
+  if (customerInfo.solarPrice < 0.11){
+    customerInfo.solarPrice = 0.11;
   }
-  if (myPrice > 0.22){
-    myPrice = 0.22;
+  if (customerInfo.solarPrice > 0.22){
+    customerInfo.solarPrice = 0.22;
   }
 
-  console.log("price: " + myPrice)
+  console.log("price: " + customerInfo.solarPrice)
 
-  var roundedPrice = Math.round(myPrice*100)
+  var roundedPrice = Math.round(customerInfo.solarPrice*100)
 
   $('#cent').html(roundedPrice)
   getCompanies(roundedPrice);
@@ -90,7 +76,7 @@ function calculateSavings(){
 
   var utilityPrice = 0.23;
 
-  var savings = (customerBill/utilityPrice)*12*20*(utilityPrice - myPrice)
+  var savings = (customerBill/utilityPrice)*12*20*(utilityPrice - customerInfo.solarPrice)
 
   $('#save').html(Math.round(savings));
 
@@ -101,7 +87,6 @@ function calculateSavings(){
 function getCompanies(price){
 
   if (price >= 17){
-    // $("#link01").html("SolarCity")
     $("#link01-href").attr("href", "http://www.solarcity.com/")
     $("#link01-img").attr("src", "imgs/solarcity.png")
 
@@ -130,5 +115,16 @@ function getCompanies(price){
     $("#link03-img").attr("src", "imgs/Solar_Universe_Logo.png")
   }
 };
+
+
+// disable 'enter' button
+$(document).ready(function() {
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
 
 google.maps.event.addDomListener(window, 'load', initialize);
