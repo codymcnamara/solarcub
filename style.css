@@ -1,14 +1,80 @@
-/*#city {
-  border: 1px solid transparent;
-  box-sizing: border-box;
-  height: 32px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  background-color: #fff;
-  font-family: Roboto;
-  font-size: 15px;
-  font-weight: 300;
-  padding: 0 11px 0 13px;
-  text-overflow: ellipsis;
-  width: 400px;
+
+#the-logo-itself{
+  width: 75px;
+  height: 112px;
+  margin: 0 auto;
+  position: relative;
+  left: 50%;
+  top: 20%;
+  margin-left: -120px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+legend{
+  text-align: right;
+}
+.result-description{
+  text-align: center;
+}
+
+.logo{
+  max-width: 225px;
   display: block;
-}*/
+  margin: 0 auto;
+}
+
+#to-be-hidden{
+  visibility: hidden;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.jumbotron{
+ background: url('power-poles.jpg') no-repeat center center !important;
+}
+
+.jumbotron h1 { color: #333; }
+
+.container-fluid { background-color: #f6f6f6; }
+
+.result, .suggestion {
+  border: 5px solid #333;
+  border-radius: 10px;
+  padding: 65px 20px;
+  margin-top: 15px;
+  font-size: 125%;
+  text-align: center;
+  background-color: white;
+  color: #333;
+}
+
+.suggestion {
+  padding: 10px 30px;
+  font-size: 150%;
+  text-align: left;
+}
+
+.control-label {
+  font-size: 150%;
+}
+
+.checkboxgroup {
+  display: inline-block;
+  text-align: center;
+}
+
+.checkboxgroup label {
+  display: block;
+  margin-right: 50px;
+}
+
+.price { font-size: 1.5em; }
+
+.kwh { font-size: 4em; }
+
+.footer { padding-top: 60px; paddding-bottom: 60px; }
+
+.text-muted { text-align: center; }
