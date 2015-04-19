@@ -32,7 +32,6 @@ function getPrice(){
     type: "GET",
     success: function (response) {
       customerInfo.acAnnual = response.outputs.ac_annual
-      console.log("ac_annual: " + customerInfo.acAnnual);
       calculatePrice();
     }
   });
@@ -60,7 +59,9 @@ function calculatePrice (){
 }
 
 function showResults(){
-  $("#to-be-hidden").css("visibility", "visible")
+  $("#to-be-hidden").css("visibility", "visible");
+  $('html,body').animate({scrollTop: $("#calc-description").offset().top + 10
+}, {duration: 1500})
 }
 
 
@@ -72,8 +73,6 @@ function calculateSavings(){
   var savings = (customerBill/utilityPrice)*12*20*(utilityPrice - customerInfo.solarPrice)
 
   $('#save').html(Math.round(savings));
-
-  console.log(savings)
   showResults();
 }
 
