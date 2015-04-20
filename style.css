@@ -7,12 +7,17 @@ input[type=radio]{
   background-color: lightblue;
 }*/
 
+label{
+  text-align: center;
+}
+
 label > input + img{ /* IMAGE STYLES */
   cursor:pointer;
   border:2px solid transparent;
 }
 label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
   border:2px solid brown;
+  border-radius: 5px;
 }
 
 #the-logo-itself{
