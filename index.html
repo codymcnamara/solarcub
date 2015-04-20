@@ -43,21 +43,37 @@
           <div class="form-group">
             <label id="orientation" for="orientation" class="col-sm-4 control-label">What way does your roof face?</label>
             <div class="col-sm-8">
-              <div class="checkboxgroup">
-                <label for="orientation"><img src="images/roofOrientation/south.png" alt="South" /><br>South</label>
-                <input type="radio" name="orientation" value="180" />
+              <div class="radio-inline">
+
+                <label for="south">
+                  <input id="south" type="radio" name="orientation" value="180">
+                  <img src="images/roofOrientation/south.png" alt="South"/>
+                  <br>South
+                </label>
+
               </div>
-              <div class="checkboxgroup">
-                <label for="orientation"><img src="images/roofOrientation/west.png" alt="West" /><br>SouthWest</label>
-                <input type="radio" name="orientation" value="225" />
+
+              <div class="radio-inline">
+                <label for="south-west">
+                  <input id="south-west" type="radio" name="orientation" value="225" />
+                  <img src="images/roofOrientation/west.png" alt="SouthWest"/>
+                  <br>SouthWest
+                </label>
               </div>
-              <div class="checkboxgroup">
-                <label for="orientation"><img src="images/roofOrientation/southwest.png" alt="South" /><br>SouthWest</label>
-                <input type="radio" name="orientation" value="90" />
+
+              <div class="radio-inline">
+                <label for="east">
+                  <input id="east" type="radio" name="orientation" value="90" />
+                  <img src="images/roofOrientation/southwest.png" alt="South" />
+                  <br>East
+                </label>
               </div>
-              <div class="checkboxgroup">
-                <label for="orientation"><img src="images/roofOrientation/southeast.png" alt="SouthEast" /><br>SouthEast</label>
-                <input type="radio" name="orientation" value="135" />
+              <div class="radio-inline">
+                <label for="south-east">
+                  <input id="south-east" type="radio" name="orientation" value="135" />
+                  <img src="images/roofOrientation/southeast.png" alt="SouthEast" />
+                  <br>SouthEast
+                </label>
               </div>
             </div>
           </div>
@@ -67,14 +83,16 @@
             <div class="col-sm-8">
 
               <label class="radio-inline">
-                <input type="radio" name="tilt" value="0"> <img src="images/roofIncline/flat-roof.png" alt="Flat roof" />
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="tilt" value="15"> <img src="images/roofIncline/no-tree-coverage.png" alt="Slightly tilt" />
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="tilt" value="30"> <img src="images/roofIncline/slight-incline-roof.png" alt="Tilt" />
-                </label>
+                <input type="radio" name="tilt" value="0">
+                <img src="images/roofIncline/flat-roof.png" alt="Flat roof"/>
+              </label>
+
+              <label class="radio-inline">
+                <input type="radio" name="tilt" value="15"> <img src="images/roofIncline/no-tree-coverage.png" alt="Slightly tilt" />
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="tilt" value="30"> <img src="images/roofIncline/slight-incline-roof.png" alt="Tilt" />
+              </label>
             </div>
           </div>
 

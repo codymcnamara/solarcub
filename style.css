@@ -1,4 +1,20 @@
 
+input[type=radio]{
+  display: none;
+}
+
+/*input[type=radio]:checked{
+  background-color: lightblue;
+}*/
+
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid brown;
+}
+
 #the-logo-itself{
   width: 75px;
   height: 112px;
@@ -62,15 +78,14 @@ body {
   font-size: 150%;
 }
 
-.checkboxgroup {
-  display: inline-block;
+.checkbox-inline {
   text-align: center;
 }
-
+/*
 .checkboxgroup label {
   display: block;
   margin-right: 50px;
-}
+}*/
 
 .price { font-size: 1.5em; }
 

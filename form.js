@@ -61,7 +61,7 @@ function calculatePrice (){
 function showResults(){
   $("#to-be-hidden").css("visibility", "visible");
   $('html,body').animate({scrollTop: $("#calc-description").offset().top + 10
-}, {duration: 1500})
+}, {duration: 1000})
 }
 
 
