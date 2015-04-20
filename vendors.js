@@ -5,7 +5,7 @@ var vendors = { high: [
     "sensitivity": "Flat",
     "rate": "0.17 and higher",
     "link": "http://www.solarcity.com/",
-    "logo": "imgs/solarcity.png"
+    "logo": "images/logos/solarcity.png"
   },
   {
     "name": "Vivint",
@@ -13,15 +13,15 @@ var vendors = { high: [
     "sensitivity": "Flat",
     "rate": "0.17 and higher",
     "link": "http://www.vivintsolar.com/",
-    "logo": "imgs/vivint.png"
+    "logo": "images/logos/vivint.png"
   },
   {
-    "name": "NRG Home Solar",
-    "model": "NRG",
+    "name": "nrg Home Solar",
+    "model": "nrg",
     "sensitivity": "Flat",
     "rate": "0.17 and higher",
     "link": "https://www.nrghomesolar.com/contact-us/get-a-quote/",
-    "logo": "imgs/NRG.png"
+    "logo": "images/logos/nrg.png"
   }],
   medium: [
     {
@@ -30,7 +30,7 @@ var vendors = { high: [
       "sensitivity": "Somewhat",
       "rate": "0.15-0.16",
       "link": "http://us.sunpower.com/home-solar/",
-      "logo": "imgs/sunpower.png"
+      "logo": "images/logos/sunpower.png"
     },
     {
       "name": "Pedersen Dean",
@@ -38,7 +38,7 @@ var vendors = { high: [
       "sensitivity": "Somewhat",
       "rate": "0.15-0.16",
       "link": "http://www.petersendean.com/get-started/",
-      "logo": "imgs/PedersenDean.png"
+      "logo": "images/logos/perderson-dean.png"
     },
     {
       "name": "Verengo",
@@ -46,7 +46,7 @@ var vendors = { high: [
       "sensitivity": "Somewhat",
       "rate": "0.15-0.16",
       "link": "http://www.verengosolar.com/",
-      "logo": "imgs/verengo.png"
+      "logo": "images/logos/verengo.png"
     }],
   low: [
     {
@@ -55,7 +55,7 @@ var vendors = { high: [
       "sensitivity": "Very",
       "rate": "0.14 and lower",
       "link": "http://www.sungevity.com/",
-      "logo": "imgs/Sungevity.png"
+      "logo": "images/logos/Sungevity.png"
     },
     {
       "name": "Sunrun",
@@ -63,7 +63,7 @@ var vendors = { high: [
       "sensitivity": "Very",
       "rate": "0.14 and lower",
       "link": "http://www.sunrun.com/free-solar-quote",
-      "logo": "imgs/Sunrun_logo.png"
+      "logo": "images/logos/Sunrun_logo.png"
     },
     {
       "name": "Solar Universe",
@@ -71,6 +71,6 @@ var vendors = { high: [
       "sensitivity": "Very",
       "rate": "0.14 and lower",
       "link": "https://solaruniverse.com/solar-savings-estimate",
-      "logo": "imgs/Solar_Universe_Logo.png"
+      "logo": "images/logos/Solar_Universe_Logo.png"
     }]
 }
