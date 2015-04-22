@@ -59,7 +59,7 @@ function calculatePrice (){
 }
 
 function showResults(){
-  $("#to-be-hidden").css("visibility", "visible");
+  $("#to-be-hidden").css("display", "inline");
   $('html,body').animate({scrollTop: $("#calc-description").offset().top + 10
 }, {duration: 1000})
 }
