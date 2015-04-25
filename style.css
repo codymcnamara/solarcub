@@ -70,7 +70,6 @@ body {
   color: #333;
 }
 
-
 .suggestion {
   padding: 10px 30px;
   font-size: 150%;
@@ -79,6 +78,41 @@ body {
 .control-label {
   font-size: 150%;
 }
+
+.radioGroup {
+    display: inline-block;
+}
+
+.radioGroup .btn-default:hover {
+    background-color: rgb(247, 189, 97);
+    border: 1px solid rgb(162, 98, 23);
+}
+
+.radioGroup label {
+    border: 1px solid rgb(162, 98, 23);
+    position: relative;
+	border-radius: 5px;
+    width: 152px;
+    height: 100px;
+    padding-top: 15px;
+    padding-left: 5px;
+    margin: auto;
+    margin-bottom: 3px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.radioGroup .short { padding-top: 30px; }
+
+.radioGroup .short2 { padding-top: 35px; }
+
+//.radioGroup img-holder { vertical-align: bottom; height: 100px; display: table-cell; }
+.radioGroup input[type="radio"]:checked + label {
+    background-color: rgb(243,156, 18);
+}
+
 
 .checkbox-inline {
   text-align: center;

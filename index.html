@@ -35,82 +35,93 @@
         <form class="form-horizontal">
 
           <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-8">
-              <input type="text" class="form-control" id="city" placeholder="What's Your City?">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label id="orientation" for="orientation" class="col-sm-4 control-label">What way does your roof face?</label>
-            <div class="col-sm-8">
-              <div class="radio-inline">
-
-                <label for="south">
-                  <input id="south" type="radio" name="orientation" value="180">
-                  <img src="images/roofOrientation/south.png" alt="South"/>
-                  <br>South
-                </label>
-
-              </div>
-
-              <div class="radio-inline">
-                <label for="south-west">
-                  <input id="south-west" type="radio" name="orientation" value="225" />
-                  <img src="images/roofOrientation/west.png" alt="SouthWest"/>
-                  <br>SouthWest
-                </label>
-              </div>
-
-              <div class="radio-inline">
-                <label for="east">
-                  <input id="east" type="radio" name="orientation" value="90" />
-                  <img src="images/roofOrientation/southwest.png" alt="South" />
-                  <br>East
-                </label>
-              </div>
-              <div class="radio-inline">
-                <label for="south-east">
-                  <input id="south-east" type="radio" name="orientation" value="135" />
-                  <img src="images/roofOrientation/southeast.png" alt="SouthEast" />
-                  <br>SouthEast
-                </label>
+              <label for="city" class="col-sm-4 control-label">What is your City?</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="city" placeholder="What's Your City?" required autofocus />
               </div>
             </div>
+
+          <div class="form-group" id="orientation">
+          <label for="orientation" class="col-sm-4 control-label">What way does your roof face?</label>
+          <div class="col-sm-8">
+
+            <div class="radioGroup">
+              <input type="radio" name="orientation" id="south" value="180" class="sr-only" />
+              <label class="btn btn-default short" for="south">
+                 <img src="images/roofOrientation/south.png" alt="South" /><br>South
+              </label>
+            </div>
+
+            <div class="radioGroup">
+              <input type="radio" name="orientation" id="west" value="225" class="sr-only"  />
+              <label class="btn btn-default" for="west">
+                <img src="images/roofOrientation/west.png" alt="West" /><br>West</label>
+            </div>
+            <div class="radioGroup">
+              <input type="radio" name="orientation" id="southwest" value="90" class="sr-only" />
+              <label class="btn btn-default" for="southwest">
+                <img src="images/roofOrientation/southwest.png" alt="South" /><br>SouthWest</label>
+            </div>
+            <div class="radioGroup">
+              <input type="radio" name="orientation" id="southeast" value="135" class="sr-only" />
+              <label class="btn btn-default" for="southeast">
+                <img src="images/roofOrientation/southeast.png" alt="SouthEast" /><br>SouthEast</label>
+            </div>
           </div>
+        </div>
+
 
           <div class="form-group">
             <label id="tilt" for="tilt" class="col-sm-4 control-label">What does your roof look like?</label>
             <div class="col-sm-8">
-
-              <label class="radio-inline">
-                <input type="radio" name="tilt" value="0">
-                <img src="images/roof-incline/flat-roof.png" alt="Flat roof"/>
-              </label>
-
-              <label class="radio-inline">
-                <input type="radio" name="tilt" value="15"> <img src="images/roof-incline/no-tree-coverage.png" alt="Slightly tilt" />
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="tilt" value="30"> <img src="images/roof-incline/slight-incline-roof.png" alt="Tilt" />
-              </label>
+              <div class="radioGroup">
+                <input type="radio" name="tilt" id="flatroof" value="0" class="sr-only" />
+                  <label class="btn btn-default short2" for="flatroof">
+                    <img src="images/roof-incline/flat-roof.png" alt="Flat roof" />
+                  </label>
+              </div>
+              <div class="radioGroup">
+                <input type="radio" name="tilt" id="slighttilt" value="15" class="sr-only" />
+                  <label class="btn btn-default" for="slighttilt">
+                    <img src="images/roof-incline/no-tree-coverage.png" alt="Slightly tilt" />
+                  </label>
+              </div>
+              <div class="radioGroup">
+                <input type="radio" name="tilt" id="slightincline" value="30" class="sr-only" />
+                <label class="btn btn-default short2" for="slightincline">
+                  <img src="images/roof-incline/slight-incline-roof.png" alt="Tilt" />
+                </label>
+              </div>
             </div>
           </div>
 
           <div class="form-group">
             <label id="tree" for="tree" class="col-sm-4 control-label"> What does your house look like?</label>
             <div class="col-sm-8">
-              <label class="radio-inline">
-                <input type="radio" name="tree" value="1"> <img src="images/roofShading/no-tree-coverage.png" alt="No tree" />
+				      <div class="radioGroup">
+                <input type="radio" name="tree" id="notree" value="1" class="sr-only" />
+				        <label class="btn btn-default" for="notree">
+				          <img src="images/roofShading/no-tree-coverage.png" alt="No tree" />
                 </label>
-                <label class="radio-inline">
-                  <input type="radio" name="tree" value="1.0"> <img src="images/roofShading/small-tree-coverage.png" alt="Small trees" />
+				      </div>
+  				    <div class="radioGroup">
+  				      <input type="radio" name="tree" id="smalltree" value="1.0" class="sr-only" />
+                <label class="btn btn-default" for="smalltree">
+  			          <img src="images/roofShading/small-tree-coverage.png" alt="Small trees" />
                 </label>
-                <label class="radio-inline">
-                  <input type="radio" name="tree" value="0.85"> <img src="images/roofShading/west-east-big-tree-coverage.png" alt="Trees slightly cover the roof" />
+              </div>
+              <div class="radioGroup">
+                  <input type="radio" name="tree" id="bigtree" value="0.85" class="sr-only" />
+                  <label class="btn btn-default" for="bigtree">
+  		              <img src="images/roofShading/west-east-big-tree-coverage.png" alt="Trees slightly cover the roof" />
+                  </label>
+  				    </div>
+  				    <div class="radioGroup">
+                <input type="radio" name="tree" id="shadetree" value="0.5" class="sr-only" />
+                <label class="btn btn-default" for="shadetree">
+  	               <img src="images/roofShading/all-side-big-tree-coverage.png" alt="Big tree shading the roof" />
                 </label>
-                <label class="radio-inline">
-                  <input type="radio" name="tree" value="0.5"> <img src="images/roofShading/all-side-big-tree-coverage.png" alt="Big tree shading the roof" />
-                </label>
+  				    </div>
             </div>
           </div>
 
