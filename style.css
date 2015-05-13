@@ -119,7 +119,7 @@ body {
 
 .result, .suggestion {
   border-radius: 10px;
-  padding: 65px 20px;
+  padding: 91px 20px;
   margin-top: 15px;
   font-size: 125%;
   text-align: center;
@@ -129,8 +129,7 @@ body {
 }
 
 .suggestion {
-  padding: 10px 30px;
-  font-size: 150%;
+  padding: 3px 30px;
 }
 
 .company-img{
@@ -139,7 +138,9 @@ body {
 
 .price { font-size: 1.5em; }
 
-.kwh { font-size: 4em; }
+.kwh {
+  font-size: 5vw;
+}
 
 
 /*footer*/

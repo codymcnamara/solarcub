@@ -72,7 +72,7 @@ function calculateSavings(){
 
   var savings = (customerBill/utilityPrice)*12*20*(utilityPrice - customerInfo.solarPrice)
 
-  $('#save').html(Math.round(savings));
+  $('#save').html("$" + Math.round(savings));
   showResults();
 }
 
