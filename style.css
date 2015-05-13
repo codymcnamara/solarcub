@@ -1,32 +1,47 @@
 
 /*General*/
 
+html, body{
+  background-color: rgb(26, 188, 156);
+}
+
 .sentences{
   text-shadow: 1px 1.25px 2px #8C8C8C;
   color: white;
 }
 
-
-html, body{
-  background-color: rgb(26, 188, 156);
+.container{
+  margin-top: 3%;
 }
 
-/*SolarCub Logo*/
+/*right side before they click estimate*/
 
-#the-logo-itself{
-  width: 75px;
-  height: 112px;
-  margin: 0 auto;
-  position: relative;
-  left: 50%;
-  top: 20%;
-  margin-left: -120px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+#site-description{
+  font-size: 45px;
+  font-style: italic;
+}
+
+#cub-logo{
+  margin: 30px 0px;
+}
+
+.btn-xlarge {
+  padding: 18px 46px;
+  font-size: 30px;
+  line-height: normal;
+  margin: 30px 0px;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+
 }
 
 
 /*Questions*/
+
+.form-group{
+  margin-bottom: 30px;
+}
 
 input[type=radio]{
   display: none;
@@ -38,7 +53,7 @@ label{
 
 label > input + img{ /* IMAGE STYLES */
   cursor:pointer;
-  border:2px solid transparent;
+  /*border:2px solid transparent;*/
 }
 
 label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
@@ -51,32 +66,22 @@ body {
 }
 
 .question-text {  /* questions text */
-  font-size: 150%;
+  font-size: 141%;
+  text-align: left;
 }
 
 .radioGroup {
     display: inline-block;
 }
 
+.btn-default{
+  background-color: rgb(26, 188, 156);
+  border-color: rgb(26, 188, 156)
+}
+
 .radioGroup .btn-default:hover {
     background-color: rgb(247, 189, 97);
 }
-
-/*.radioGroup label {
-    border: 1px solid rgb(162, 98, 23);
-    position: relative;
-	  border-radius: 5px;
-    width: 152px;
-    height: 100px;
-    padding-top: 15px;
-    padding-left: 5px;
-    margin: auto;
-    margin-bottom: 3px;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}*/
 
 .radioGroup .short {
   padding-top: 24px;
@@ -87,7 +92,7 @@ body {
 }
 
 .tree{
-  max-width: 62px;
+  max-width: 78px;
   height: 57px;
 }
 
@@ -139,6 +144,3 @@ body {
 
 /*footer*/
 .text-muted { text-align: center; }
-
-
-.footer { padding-top: 60px; paddding-bottom: 60px; }

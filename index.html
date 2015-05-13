@@ -24,12 +24,6 @@
 
   <div class="container">
 
-    <!-- <div class="row">
-      <div id="brand-cover">
-        <img id="the-logo-itself" src="images/solarcub-logo.png" alt="SolarCub" />
-      </div>
-    </div> -->
-
     <div class="row">
       <div class="col-md-5">
         <form class="form-horizontal">
@@ -79,16 +73,16 @@
                   </label>
               </div>
               <div class="radioGroup">
-                <input type="radio" name="tilt" id="slighttilt" value="15" class="sr-only" />
-                  <label class="btn btn-default" for="slighttilt">
-                    <img src="images/roof-incline/no-tree-coverage.png" alt="Slightly tilt" />
-                  </label>
-              </div>
-              <div class="radioGroup">
                 <input type="radio" name="tilt" id="slightincline" value="30" class="sr-only" />
                 <label class="btn btn-default short2" for="slightincline">
                   <img src="images/roof-incline/slight-incline-roof.png" alt="Tilt" />
                 </label>
+              </div>
+              <div class="radioGroup">
+                <input type="radio" name="tilt" id="slighttilt" value="15" class="sr-only" />
+                  <label class="btn btn-default" for="slighttilt">
+                    <img src="images/roof-incline/no-tree-coverage.png" alt="Slightly tilt" />
+                  </label>
               </div>
             </div>
           </div>
@@ -137,25 +131,26 @@
       </div>
 
       <div class="col-md-offset-1 col-md-6">
-        <div class="row" id="site-description">
-          <div class="col-md-offset-1 col-md-10">
-            Estimate solar Panel Savings
+        <div class="row text-center">
+          <div class="col-md-offset-1 col-md-10 sentences" id="site-description">
+            Estimate Solar Panel Savings
           </div>
         </div>
-        <div class="row" id="site-description">
+        <div class="row text-center">
           <div class="col-md-offset-1 col-md-10">
-            <img src="images/solarcub-logo.png" alt="SolarCub" />
+            <img src="images/solarcub-logo.png" alt="SolarCub" id="cub-logo"/>
           </div>
         </div>
-        <div class="row" id="site-description">
-          <div class="col-md-offset-1 col-md-10">
-            <button id="estimate" class="btn btn-primary">Estimate</button>
+        <div class="row text-center">
+          <div class="col-md-offset-1 col-md-10" >
+            <button id="estimate" class="btn-xlarge btn-primary">Estimate</button>
           </div>
         </div>
       </div>
 
 
-      <div id="to-be-hidden">
+      <div class="row" id="to-be-hidden">
+        <div class="col-md-12">
 
         <div class="row sentences">
           <div class="col-sm-4 result-description" id="calc-description">
@@ -201,6 +196,7 @@
             <p class="kwh"><span id="cent"> 15 </span>&cent;&#47;kwh</p>
           </div>
 
+        </div>
         </div>
       </div>
 
