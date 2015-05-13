@@ -4,29 +4,15 @@
 .sentences{
   text-shadow: 1px 1.25px 2px #8C8C8C;
   color: white;
+  text-align: right;
 }
 
-
-input[type=radio]{
-  display: none;
-}
-
-label{
-  text-align: center;
-}
-
-label > input + img{ /* IMAGE STYLES */
-  cursor:pointer;
-  border:2px solid transparent;
-}
-label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
-  border:2px solid brown;
-  border-radius: 5px;
-}
 
 html, body{
   background-color: rgb(26, 188, 156);
 }
+
+/*SolarCub Logo*/
 
 #the-logo-itself{
   width: 75px;
@@ -40,32 +26,80 @@ html, body{
   margin-bottom: 40px;
 }
 
-legend{
-  text-align: right;
+
+/*Questions*/
+
+input[type=radio]{
+  display: none;
 }
-.result-description{
+
+label{
   text-align: center;
 }
 
-.logo{
-  max-width: 225px;
-  display: block;
-  margin: 0 auto;
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
 }
 
-#to-be-hidden{
-  display: none;
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid brown;
+  border-radius: 5px;
 }
 
 body {
   font-family: 'Lato', sans-serif;
 }
 
-.jumbotron{
- background: url('power-poles.jpg') no-repeat center center !important;
+.question-text {  /* questions text */
+  font-size: 150%;
 }
 
-.jumbotron h1 { color: #333; }
+.radioGroup {
+    display: inline-block;
+}
+
+.radioGroup .btn-default:hover {
+    background-color: rgb(247, 189, 97);
+    border: 1px solid rgb(162, 98, 23);
+}
+
+.radioGroup label {
+    border: 1px solid rgb(162, 98, 23);
+    position: relative;
+	  border-radius: 5px;
+    width: 152px;
+    height: 100px;
+    padding-top: 15px;
+    padding-left: 5px;
+    margin: auto;
+    margin-bottom: 3px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.radioGroup .short { padding-top: 30px; }
+
+.radioGroup .short2 { padding-top: 35px; }
+
+.radioGroup img-holder { vertical-align: bottom; height: 100px; display: table-cell; }
+
+.radioGroup input[type="radio"]:checked + label {
+    background-color: rgb(243,156, 18);
+}
+
+
+/*results */
+
+#to-be-hidden{
+  display: none;
+}
+
+.result-description{
+  text-align: center;
+}
 
 .result, .suggestion {
   border-radius: 10px;
@@ -83,64 +117,17 @@ body {
   font-size: 150%;
 }
 
-.control-label {
-  font-size: 150%;
+.company-img{
+  max-width: 100%;
 }
-
-.radioGroup {
-    display: inline-block;
-}
-
-.radioGroup .btn-default:hover {
-    background-color: rgb(247, 189, 97);
-    border: 1px solid rgb(162, 98, 23);
-}
-
-.radioGroup label {
-    border: 1px solid rgb(162, 98, 23);
-    position: relative;
-	border-radius: 5px;
-    width: 152px;
-    height: 100px;
-    padding-top: 15px;
-    padding-left: 5px;
-    margin: auto;
-    margin-bottom: 3px;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
-.radioGroup .short { padding-top: 30px; }
-
-.radioGroup .short2 { padding-top: 35px; }
-
-//.radioGroup img-holder { vertical-align: bottom; height: 100px; display: table-cell; }
-.radioGroup input[type="radio"]:checked + label {
-    background-color: rgb(243,156, 18);
-}
-
-
-.checkbox-inline {
-  text-align: center;
-}
-/*
-.checkboxgroup label {
-  display: block;
-  margin-right: 50px;
-}*/
 
 .price { font-size: 1.5em; }
 
 .kwh { font-size: 4em; }
 
-.footer { padding-top: 60px; paddding-bottom: 60px; }
 
+/*footer*/
 .text-muted { text-align: center; }
 
 
-/*results */
-.company-img{
-  max-width: 100%;
-}
+.footer { padding-top: 60px; paddding-bottom: 60px; }
