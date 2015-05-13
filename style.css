@@ -60,10 +60,9 @@ body {
 
 .radioGroup .btn-default:hover {
     background-color: rgb(247, 189, 97);
-    border: 1px solid rgb(162, 98, 23);
 }
 
-.radioGroup label {
+/*.radioGroup label {
     border: 1px solid rgb(162, 98, 23);
     position: relative;
 	  border-radius: 5px;
@@ -77,16 +76,29 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
+}*/
+
+.radioGroup .short {
+  padding-top: 24px;
 }
 
-.radioGroup .short { padding-top: 30px; }
+.radioGroup .short2 {
+  padding-top: 25px;
+}
 
-.radioGroup .short2 { padding-top: 35px; }
+.tree{
+  max-width: 62px;
+  height: 57px;
+}
 
-.radioGroup img-holder { vertical-align: bottom; height: 100px; display: table-cell; }
+.radioGroup img-holder {
+  vertical-align: bottom;
+  height: 100px;
+  display: table-cell;
+}
 
 .radioGroup input[type="radio"]:checked + label {
-    background-color: rgb(243,156, 18);
+  background-color: rgb(243,156, 18);
 }
 
 
