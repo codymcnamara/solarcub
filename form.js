@@ -25,7 +25,7 @@ function initialize() {
 function getPrice(){
   var tilt = $('input:radio[name=tilt]:checked').val()
   var azimuth = $('input:radio[name=orientation]:checked').val()
-  var url = "https://developer.nrel.gov/api/pvwatts/v5.json?api_key=xwLd5WSQRkNkNnecjrj3sCjiWtBn0dromb64lMvV&lat=" + customerInfo.lat + "&lon=" + customerInfo.long + "&system_capacity=1&module_type=0&losses=5&array_type=1&tilt=" + tilt + "&azimuth=" + azimuth
+  var url = "https://developer.nrel.gov/api/pvwatts/v6.json?api_key=xwLd5WSQRkNkNnecjrj3sCjiWtBn0dromb64lMvV&lat=" + customerInfo.lat + "&lon=" + customerInfo.long + "&system_capacity=1&module_type=0&losses=5&array_type=1&tilt=" + tilt + "&azimuth=" + azimuth
 
   $.ajax({
     url: url,
@@ -33,6 +33,9 @@ function getPrice(){
     success: function (response) {
       customerInfo.acAnnual = response.outputs.ac_annual
       calculatePrice();
+    },
+    error: function (error){
+      console.log(error);
     }
   });
 }
